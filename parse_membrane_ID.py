@@ -2,16 +2,9 @@
  #Take membrane ID string and return a dictionary populated with the relevant conditions
 
 def parse_mem_id(id: str = ""):
-    #remove file type (commonly .mpt)
-    if id.endswith(".mpt"):
-        id = id[:-4]
 
-   #split the ID string at _
+    #split the ID string at _
     parts = id.split("_")
-
-    #remove last part of string (channel number)
-    if parts[-1].startswith("C"):
-        parts = parts[:-1]
 
     #splitting the soaking concentration from the salt
     soak_conc_raw = parts[0]
@@ -57,4 +50,4 @@ def parse_mem_id(id: str = ""):
     
     return return_dict
 
-print(parse_mem_id("40mMCoCl2_M01_R3_FKS50_20250424_C01.mpt"))
+#print(parse_mem_id("40mMCoCl2_M02_R1_FKS50_20250424_C01")) 
